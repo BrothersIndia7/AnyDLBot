@@ -40,8 +40,7 @@ async def convert_to_audio(bot, update):
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.DOWNLOAD_START,
-            reply_to_message_id=update.message_id
+            text=Translation.DOWNLOAD_START
         )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
@@ -131,6 +130,5 @@ async def convert_to_audio(bot, update):
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.REPLY_TO_DOC_FOR_C2V,
-            reply_to_message_id=update.message_id
+            text=Translation.REPLY_TO_DOC_FOR_C2V
         )
