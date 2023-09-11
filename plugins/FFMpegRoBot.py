@@ -37,8 +37,7 @@ async def ffmpegrobot_ad(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.FF_MPEG_RO_BOT_AD_VER_TISE_MENT,
-        disable_web_page_preview=True,
-        reply_to_message_id=update.message_id
+        disable_web_page_preview=True
     )
 
 
@@ -49,8 +48,7 @@ async def trim(bot, update):
     if os.path.exists(saved_file_path):
         a = await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.DOWNLOAD_START,
-            reply_to_message_id=update.message_id
+            text=Translation.DOWNLOAD_START
         )
         commands = update.command
         if len(commands) == 3:
@@ -108,7 +106,6 @@ async def trim(bot, update):
                     # thumb=thumb_image_path,
                     # caption=description,
                     # reply_markup=reply_markup,
-                    reply_to_message_id=update.message_id,
                     progress=progress_for_pyrogram,
                     progress_args=(
                         Translation.UPLOAD_START,
